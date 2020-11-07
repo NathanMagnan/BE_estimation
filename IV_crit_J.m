@@ -1,13 +1,12 @@
 %% Cost Function to minimize
-function [J, Model] = crit_J(p,D)
+function [J, Model] = IV_crit_J(p,D)
     % Compute the model corresponding to parameters p
-    [R,C] = size(D);
-    [Cols,Rows] = meshgrid(1:C,1:R);
+    [r,c] = size(D);
+    [col,row] = meshgrid(1:c,1:r);
     a=p(1); 
     b=p(2);
     nu=p(3:6);
-    PSF = Moffat(nu,Rows,Cols);
-    Model = a*PSF+b;
+    Model = a*Moffat(nu,row,col)+b;
     % Compute the cost function
-    J = (D-Model).' * (D-Model);
+    J = (D(:)-Model(:)).' * (D(:)-Model(:));
 end
