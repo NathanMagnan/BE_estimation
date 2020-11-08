@@ -12,7 +12,7 @@ alpha_init = 2;
 beta_init =  2;
 
 p_init = [a_init; b_init; r0_init; c0_init; alpha_init; beta_init];
-
+disp(p_init);
 %% Minimization
 
 p_opt = fminsearch(@(p) IV_crit_J(p,D), p_init);
