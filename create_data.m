@@ -3,9 +3,9 @@
 C = 20;
 R = 20;
 a = 1;
-b = 0.05;
-r0 = 8;
-c0 = 8;
+b = 0.3;
+r0 = 8.5;
+c0 = 8.5;
 alpha = 4;
 beta = 3;
 p_th = [a; b; r0; c0; alpha; beta];
