@@ -36,11 +36,12 @@ function chain = Metropolis_Hastings(n_steps, n_burns, tau)
 
         %% acceptance
         u = log(rand());
-        v = -(IV_crit_J(p_new, D) / (2 * sigma^2) - IV_crit_J(p_old, D) / (2 * sigma^2));
+        v = log(IV_crit_J(p_new, D)) - log(IV_crit_J(p_old, D));
         if u < v
             chain = [chain, p_new];
         end
     end
+    
 
     %% burn-in
     chain = chain(:, n_burns:length(chain));
