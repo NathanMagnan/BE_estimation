@@ -1,0 +1,28 @@
+function chain = Metropolis_Hastings(n_steps, n_burns)
+%% charge parameters
+load data.mat
+d=D(:);
+a = p_th(1);
+b = p_th(2);
+r0 = p_th(3);
+c0 = p_th(4);
+alpha = p_th(5);
+beta = p_th(6);
+[R, C] = size(D);
+sigma = 0.1;
+
+%% initialisation
+a_prop = ;
+b_prop = ;
+r0_prop = ;
+c0_prop = ;
+alpha_prop = ;
+beta_prop = ;
+p = [a_prop; b_prop
+
+%% proposition
+
+%% acceptance
+
+%% burn-in
+end
