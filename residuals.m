@@ -2,9 +2,12 @@ function residuals(D_bruit,D_est)
     res = D_bruit-D_est;
     r=res(:);
     disp(std(r));
-    figure
+    figure(1)
     hist(r);
-    figure
+    title("Histograms of the residuals");
+    xlabel("residuals");
+    ylabel("number of pixels");
+    figure(2)
     colormap('gray');
     imagesc(res); colorbar
 end

@@ -29,3 +29,13 @@ end
 %% Compute ML estimators
 theta_ML = inv(H.' * H) * H.' * d;
 Gamma_ML = sigma^2 * inv(H.' * H);
+nu_ML = nu;
+a_ML = theta_ML(1);
+b_ML = theta_ML(2);
+
+%% Plot estimated image
+[Cols, Rows] = meshgrid(1:C, 1:R);
+PSF_ML = Moffat(nu_ML, Rows, Cols);
+D_ML = a_ML*PSF_ML + b_ML;
+colormap('gray');
+imagesc(D_ML); colorbar
