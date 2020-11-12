@@ -18,3 +18,6 @@ PSF = Moffat(nu, Rows, Cols);
 Model_init = a_init*PSF + b_init;
 colormap('gray');
 imagesc(Model_init); colorbar
+
+%% Save the data
+save data_IV_6_init_cor.mat D p_th

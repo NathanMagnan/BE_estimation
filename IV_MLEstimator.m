@@ -15,5 +15,7 @@ p_init = [a_init; b_init; r0_init; c0_init; alpha_init; beta_init];
 disp(p_init);
 %% Minimization
 
+%options = optimset('PlotFcns',@optimplotfval);
 p_opt = fminsearch(@(p) IV_crit_J(p,D), p_init);
-disp(p_opt)
+disp(p_opt);
+dataplotp(p_opt,0);
