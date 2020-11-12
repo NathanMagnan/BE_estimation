@@ -2,9 +2,9 @@ function residuals(D_bruit,D_est)
     res = D_bruit-D_est;
     r=res(:);
     disp(std(r));
-    figure(1)
+    figure
     hist(r);
-    figure(2)
+    figure
     colormap('gray');
     imagesc(res); colorbar
 end
