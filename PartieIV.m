@@ -8,14 +8,14 @@ R = 20 ; C = 20;
 display(p_init);
 display(p_est);
 display(p_th);
-save data_IV.mat D_b p_th;
+save data_IV.mat p_est;
 
 %% Partie IV Question 10
 
 p_i = [1.2  0.4  8  9  6  5; 
        0.9  0.1  9  9  3  4;
-       1.2  0.4  8  9  2  2;
-       1.2  0.4  8  9  4  3;
-       0.6  0.7  2  5  5  5];
+       1.2  0.4  10  10  5  4;
+       0.7  0.5  17  5  1  1.2];
 
 p_est = IV_10(p_i,p_th,D_b,R,C);
+disp(p_est)

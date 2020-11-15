@@ -13,15 +13,12 @@ function p_est = IV_10(p_init,p_th,D_b,R,C)
         p_est(k,:) = fminsearch(@(p) IV_crit_J(p,D_b), p_init(k,:));
         D_est = cdata(p_est(k,:),0,R,C);
         % Affichage
-        subplot(n,3,3*(k-1)+1)
+        subplot(n,2,2*(k-1)+1)
         imagesc(D_init); colorbar
-        title("Donnees initiales de l'optimisation");
-        subplot(n,3,3*(k-1)+2);
+        title({'Initial parameters';['a=',num2str(p_init(k,1)),'  b=',num2str(p_init(k,2)),'  r_0=',num2str(p_init(k,3)),'  c_0=',num2str(p_init(k,4)),'  \alpha=',num2str(p_init(k,5)),'  \beta=',num2str(p_init(k,6))]});
+        subplot(n,2,2*k);
         imagesc(D_est); colorbar
-        title('Données estimées');
-        subplot(n,3,3*k);
-        imagesc(D_th); colorbar
-        title('Données théoriques');
+        title('Estimated PSF');
     end
     
 end
